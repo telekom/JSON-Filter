@@ -1,0 +1,16 @@
+{
+  "contains": [
+    "foo",
+    "bar",
+    "CONTAINS_VALUE"
+  ],
+  "equal": "EQUAL_VALUE",
+  "greater-equal": "GREATER_EQUAL_VALUE",
+  "greater": "Z",
+  "in": "IN_VALUE_0",
+  "less-equal": "LESS_EQUAL_VALUE",
+  "less": "A",
+  "not-equal": "EQUAL_VALUE",
+  "regex": "REGEX_VALUE",
+  "nct": "NOT_CONTAIN_VALUE"
+}

@@ -1,0 +1,3 @@
+eq:
+  field: $..type
+  value: bar

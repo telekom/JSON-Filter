@@ -1,0 +1,4 @@
+noop:
+  - ct:
+      field: "$.foo"
+      value: "BAR"

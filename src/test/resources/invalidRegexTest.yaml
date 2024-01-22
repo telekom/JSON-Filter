@@ -1,0 +1,4 @@
+and:
+  - rx:
+      field: "$.foo"
+      value: "["

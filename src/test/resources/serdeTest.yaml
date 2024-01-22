@@ -1,0 +1,35 @@
+---
+and:
+- ct:
+    field: "$.contains"
+    value: "CONTAINS_VALUE"
+- eq:
+    field: "$.equal"
+    value: "EQUAL_VALUE"
+- ge:
+    field: "$.greater-equal"
+    value: "GREATER_EQUAL_VALUE"
+- gt:
+    field: "$.greater"
+    value: "GREATER_VALUE"
+- in:
+    field: "$.in"
+    value:
+    - "IN_VALUE_0"
+    - "IN_VALUE_1"
+    - "IN_VALUE_2"
+- le:
+    field: "$.less-equal"
+    value: "LESS_EQUAL_VALUE"
+- lt:
+    field: "$.less"
+    value: "LESS_VALUE"
+- ne:
+    field: "$.not-equal"
+    value: "NOT_EQUAL_VALUE"
+- rx:
+    field: "$.regex"
+    value: "REGEX_VALUE"
+- nct:
+    field: "$.nct"
+    value: "NOT_CONTAINS_VALUE"

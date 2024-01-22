@@ -1,0 +1,4 @@
+and:
+  - nct:
+      field: $..type
+      value: 'A'

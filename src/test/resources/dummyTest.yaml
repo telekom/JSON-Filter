@@ -1,0 +1,22 @@
+and:
+  - in:
+      field: $.originator
+      value:
+        - x
+        - y
+        - z
+  - or:
+      - and:
+          - ct:
+              field: $.members[?(@.firstname)]
+              value: 'Max'
+          - ct:
+              field: $.members[?(@.lastname)]
+              value: 'Mustermann'
+      - and:
+          - ct:
+              field: $.members[?(@.firstname)]
+              value: 'Erika'
+          - ct:
+              field: $.members[?(@.lastname)]
+              value: 'Musterfrau'

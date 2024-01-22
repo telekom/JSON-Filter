@@ -1,0 +1,106 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+    id 'signing'
+}
+
+group 'de.telekom' // your group id
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation 'org.slf4j:slf4j-api:2.0.9'
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.0'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.0'
+    implementation 'org.apache.commons:commons-lang3:3.14.0'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
+
+    //3rd party
+    implementation 'com.jayway.jsonpath:json-path:2.8.0'
+    implementation 'net.minidev:json-smart:2.5.0'
+    testImplementation 'commons-io:commons-io:2.15.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+publishing {
+    publications {
+
+        mavenJava(MavenPublication) {
+
+            groupId = 'de.telekom'
+            artifactId = 'json-filter'
+            version = '1.0.0'
+            from components.java
+
+            pom {
+                name = 'JSON Filter'
+                description = 'A simple library that allows for filtering JSON documents.'
+                url = 'https://github.com/telekom/JSON-Filter'
+                inceptionYear = '2022'
+
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://opensource.org/licenses/MIT'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'eni-pandora'
+                        name = 'Team Pandora'
+                        email = 'dtit_eni_hub_team_pandora@telekom.de'
+                        organization = 'Deutsche Telekom IT GmbH'
+                        organizationUrl = 'https://developer.telekom.de/'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/telekom/JSON-Filter.git'
+                    developerConnection = 'scm:git:git://github.com/telekom/JSON-Filter.git'
+                    url = 'https://github.com/telekom/JSON-Filter'
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.properties["username"]
+                password = project.properties["password"]
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}

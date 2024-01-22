@@ -1,0 +1,16 @@
+and:
+  - eq:
+      field: "$.string"
+      value: "foo"
+  - eq:
+      field: "$.number"
+      value: 200
+  - eq:
+      field: "$.boolean"
+      value: true
+  - eq:
+      field: "$.array"
+      value:
+        - "foo"
+        - 200
+        - true
