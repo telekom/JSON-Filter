@@ -46,22 +46,58 @@ public class EvaluationResult {
         this.childOperators = childOperators;
     }
 
+    /**
+     * Creates an EvaluationResult instance indicating no operation.
+     *
+     * @return EvaluationResult the created evaluation result, with default values and "noop" operator name.
+     */
     public static EvaluationResult empty() {
         return new EvaluationResult(true, "noop", null, null, null);
     }
 
+    /**
+     * Creates a valid EvaluationResult instance based on the given Operator.
+     *
+     * @param op the operator for this evaluation.
+     * @return EvaluationResult the created evaluation result, which is valid by default.
+     */
     public static EvaluationResult valid(Operator op) {
         return new EvaluationResult(true, op.getOperator().getValue(), null, "", Collections.emptyList());
     }
 
+    /**
+     * Creates a valid EvaluationResult instance based on the given Operator and other evaluation results.
+     *
+     * @param op the operator for this evaluation.
+     * @param evaluationResults the list of evaluation results for child operators.
+     *
+     * @return EvaluationResult the created evaluation result, which is valid by default.
+     */
     public static EvaluationResult valid(Operator op, List<EvaluationResult> evaluationResults) {
         return new EvaluationResult(true, op.getOperator().getValue(), null, "", evaluationResults);
     }
 
+    /**
+     * Creates an EvaluationResult instance indicating an error in the evaluation process.
+     *
+     * @param rootCause the operator that caused the error.
+     * @param causeDescription the description of the error.
+     *
+     * @return EvaluationResult the created evaluation result, which is not valid by default.
+     */
     public static EvaluationResult withError(Operator rootCause, String causeDescription) {
         return new EvaluationResult(false, rootCause.getOperator().getValue(), rootCause, causeDescription, new ArrayList<>());
     }
 
+
+    /**
+     * Creates an EvaluationResult instance based on the results of an evaluation process.
+     *
+     * @param logicOperator the operator for this evaluation.
+     * @param evaluationResults the list of evaluation results for child operators.
+     *
+     * @return EvaluationResult the created evaluation result, which is valid if all/any child evaluations are valid.
+     */
     public static EvaluationResult fromResultList(LogicOperator logicOperator, List<EvaluationResult> evaluationResults) {
         switch (logicOperator.getOperator()) {
             case AND:

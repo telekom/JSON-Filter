@@ -5,19 +5,15 @@ public interface Operator {
     OperatorEnum getOperator();
 
     /**
-     * Validates the operator and all of its children.
-     *
-     * @return true when the operator and all of its children are valid,
-     * false when the operator or one of its children is not valid.
+     * Validates the operator(-chain).
+     * @return A ValidationResult that describes the result of the validation.
      */
     ValidationResult validate();
 
     /**
-     * Evaluates the given json against the operator(-chain).
-     *
-     * @param json Given payload
-     * @return true when the json is valid against the operator(-chain),
-     * false when is is not.
+     * Evaluates a given JSON-payload against the operator(-chain).
+     * @param json The JSON-payload that should be evaluated.
+     * @return A EvaluationResult that describes the result of the evaluation.
      */
     EvaluationResult evaluate(String json);
 }
