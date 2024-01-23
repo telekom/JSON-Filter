@@ -75,16 +75,10 @@ To convert fields from JSON- or YAML-files to operators one needs to add the `Op
 ObjectMapper om = new ObjectMapper(new YAMLFactory());
 
 SimpleModule m = new SimpleModule();
-m.
+m.addDeserializer(Operator .class, new OperatorDeserializer());
+m.addSerializer(Operator .class, new OperatorSerializer());
 
-addDeserializer(Operator .class, new OperatorDeserializer());
-        m.
-
-addSerializer(Operator .class, new OperatorSerializer());
-
-        om.
-
-registerModule(m);
+om.registerModule(m);
 ```
 
 Once the `OperatorDeserializer` and the module is registered in the `ObjectMapper` one can use the `Operator` in any
