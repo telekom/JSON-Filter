@@ -1,2 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
+#
+# SPDX-License-Identifier: Apache-2.0
+
 # JSON-Filter is currently maintained by Telekom's Horizon team.
 * @telekom/pubsub-horizon
