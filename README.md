@@ -165,3 +165,8 @@ The result of the evaluation is an `EvaluationResult` that indicates if and why 
 | in               | `in`     | comparison | Valid if `field` is in `value`.                           |
 | contains         | `ct`     | comparison | Valid if `field` contains `value`.                        |
 | nct              | `nct`    | comparison | Valid if `field` does not contain `value`.                |
+
+## Licensing
+
+This project follows the [REUSE standard for software licensing](https://reuse.software/).
+Each file contains copyright and license information, and license texts can be found in the [./LICENSES](./LICENSES) folder. For more information visit https://reuse.software/.
