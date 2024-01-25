@@ -5,6 +5,7 @@ SPDX-License-Identifier: CC0-1.0
 -->
 
 # JSON Filter <!-- omit in toc -->
+[![REUSE status](https://api.reuse.software/badge/github.com/telekom/JSON-Filter)](https://api.reuse.software/info/github.com/telekom/JSON-Filter)
 
 JSON filter is a small, lightweight filter-library that allows to evaluate JSON payload against a filter consisting of
 operators.
