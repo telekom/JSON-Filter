@@ -4,6 +4,7 @@
 
 plugins {
     id 'java'
+    id 'jacoco'
     id 'maven-publish'
     id 'signing'
 }
@@ -19,6 +20,8 @@ repositories {
 java {
     withJavadocJar()
     withSourcesJar()
+    sourceCompatibility = "21"
+    targetCompatibility = "21"
 }
 
 dependencies {
@@ -44,6 +47,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+    }
 }
 
 publishing {
