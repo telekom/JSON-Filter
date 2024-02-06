@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-name: Run Gradle on every push
+name: Gradle Test on Push
 on: push
 jobs:
   gradle:
