@@ -8,6 +8,8 @@ SPDX-License-Identifier: CC0-1.0
 [![REUSE status](https://api.reuse.software/badge/github.com/telekom/JSON-Filter)](https://api.reuse.software/info/github.com/telekom/JSON-Filter)
 [![Issues](https://img.shields.io/github/issues/telekom/JSON-Filter?style=flat)](https://github.com/telekom/JSON-Filter/issues)
 
+## About
+
 JSON filter is a small, lightweight filter-library that allows to evaluate JSON payload against a filter consisting of
 operators.
 Operators can be defined programmatically or in JSON- or YAML-files.
@@ -167,6 +169,14 @@ The result of the evaluation is an `EvaluationResult` that indicates if and why 
 | in               | `in`     | comparison | Valid if `field` is in `value`.                           |
 | contains         | `ct`     | comparison | Valid if `field` contains `value`.                        |
 | nct              | `nct`    | comparison | Valid if `field` does not contain `value`.                |
+
+## Contributing
+
+### Code of Conduct
+
+This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/) in version 2.1 as our code of conduct. Please see the details in our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). All contributors must abide by the code of conduct.
+
+By participating in this project, you agree to abide by its [Code of Conduct](./CODE_OF_CONDUCT.md) at all times.
 
 ## Licensing
 
