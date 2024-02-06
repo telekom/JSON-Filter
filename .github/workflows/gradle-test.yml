@@ -3,7 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0
 
 name: Gradle Test on Push
-on: push
+on:
+  push:
+  pull_request:
+    branches:
+      - main
 jobs:
   gradle:
     runs-on: ubuntu-latest
