@@ -3,7 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 
 name: Gradle Build
-on: release
+on:
+  release:
+    types: [published]
 jobs:
   gradle:
     runs-on: ubuntu-latest
