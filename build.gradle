@@ -39,7 +39,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
 
     //3rd party
-    implementation 'com.jayway.jsonpath:json-path:2.8.0'
+    implementation 'com.jayway.jsonpath:json-path:2.9.0'
     implementation 'net.minidev:json-smart:2.5.0'
     testImplementation 'commons-io:commons-io:2.15.1'
 }
