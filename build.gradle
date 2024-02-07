@@ -10,7 +10,6 @@ plugins {
 }
 
 group 'de.telekom' // your group id
-version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -102,14 +101,18 @@ publishing {
             name = "OSSRH"
             url = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
-                username = project.properties["username"]
-                password = project.properties["password"]
+                username = System.getenv('PUBLISH_USERNAME')
+                password = System.getenv('PUBLISH_PASSWORD')
             }
         }
     }
 }
 
 signing {
+    def signingKey = new String(Base64.decoder.decode(System.getenv('PUBLISH_GPG_PRIVATE_KEY') ?: ""))
+    def signingPassword = System.getenv('PUBLISH_GPG_PASSPHRASE')
+    useInMemoryPgpKeys(signingKey, signingPassword)
+
     sign publishing.publications.mavenJava
 }
 
