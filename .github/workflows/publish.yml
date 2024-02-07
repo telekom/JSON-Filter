@@ -1,8 +1,0 @@
-# SPDX-FileCopyrightText: 2024 Deutsche Telekom AG
-#
-# SPDX-License-Identifier: Apache-2.0
-
-name: Publish package to the Maven Central Repository
-on:
-  release:
-    types: [ created ]
