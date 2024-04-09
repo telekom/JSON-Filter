@@ -7,7 +7,7 @@ package de.telekom.jsonfilter.operator.comparison;
 import com.jayway.jsonpath.InvalidPathException;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.internal.path.PathCompiler;
-import de.telekom.jsonfilter.exception.TooManyValueExeption;
+import de.telekom.jsonfilter.exception.NoSingleValueException;
 import de.telekom.jsonfilter.operator.EvaluationResult;
 import de.telekom.jsonfilter.operator.Operator;
 import de.telekom.jsonfilter.operator.ValidationResult;
@@ -54,12 +54,12 @@ public abstract class ComparisonOperator<T> implements Operator {
 
     abstract EvaluationResult compare(String json, String jsonPath, T expectedValue);
 
-    protected Comparable<T> getActualValue(String json, String jsonPath) throws TooManyValueExeption {
+    protected Comparable<T> getActualValue(String json, String jsonPath) throws NoSingleValueException {
         var valueList = getActualValues(json, jsonPath);
         if (valueList.size() == 1) {
             return valueList.getFirst();
         } else {
-            throw new TooManyValueExeption(jsonPath, valueList.size());
+            throw new NoSingleValueException(jsonPath, valueList.size());
         }
     }
 

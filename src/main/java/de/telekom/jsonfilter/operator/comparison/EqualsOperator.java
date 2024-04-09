@@ -6,6 +6,7 @@ package de.telekom.jsonfilter.operator.comparison;
 
 import de.telekom.jsonfilter.operator.EvaluationResult;
 
+
 public class EqualsOperator<T> extends ComparisonOperator<T> {
 
     public EqualsOperator(String jsonPath, T expectedValue) {

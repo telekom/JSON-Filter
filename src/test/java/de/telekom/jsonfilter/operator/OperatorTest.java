@@ -93,6 +93,6 @@ class OperatorTest {
         EvaluationResult result = operator.evaluate(payload.toString());
 
         assertFalse(result.isMatch());
-        assertEquals("An exception occurred during the evaluation: \nThe evaluation of \"$..type\" contained too many values. Expected 1, got 2.", result.getCauseDescription());
+        assertEquals("An exception occurred during the evaluation: \nThe evaluation of \"$..type\" did not return a single value. Expected 1 value, got 2.", result.getCauseDescription());
     }
 }
