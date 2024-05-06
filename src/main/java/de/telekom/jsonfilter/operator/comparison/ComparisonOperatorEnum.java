@@ -18,7 +18,6 @@ public enum ComparisonOperatorEnum implements OperatorEnum {
     GE("greater or equal"),
     IN("in"),
     CT("contains"),
-    EX("exists"),
     NCT("not contains");
 
     @Getter

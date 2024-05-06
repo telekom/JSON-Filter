@@ -34,7 +34,6 @@ public abstract class LogicOperator implements Operator {
         return switch (operator) {
             case AND -> new AndOperator(operatorList);
             case OR -> new OrOperator(operatorList);
-            default -> null;
         };
     }
 }
