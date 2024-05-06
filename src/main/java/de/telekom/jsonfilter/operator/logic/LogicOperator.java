@@ -11,11 +11,9 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public abstract class LogicOperator implements Operator {
-    @Getter
     final LogicOperatorEnum operator;
-
-    @Getter
     List<Operator> operators = new ArrayList<>();
 
     protected LogicOperator(LogicOperatorEnum operator) {
