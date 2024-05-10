@@ -7,6 +7,7 @@ package de.telekom.jsonfilter.operator.comparison;
 import de.telekom.jsonfilter.operator.OperatorEnum;
 import lombok.Getter;
 
+@Getter
 public enum ComparisonOperatorEnum implements OperatorEnum {
 
     EQ("equal"),
@@ -18,10 +19,8 @@ public enum ComparisonOperatorEnum implements OperatorEnum {
     GE("greater or equal"),
     IN("in"),
     CT("contains"),
-    EX("exists"),
     NCT("not contains");
 
-    @Getter
     private final String value;
 
     ComparisonOperatorEnum(String value) {

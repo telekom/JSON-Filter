@@ -66,7 +66,7 @@ public class EvaluationResult {
      * @return EvaluationResult the created evaluation result, which is valid by default.
      */
     public static EvaluationResult valid(Operator op) {
-        return new EvaluationResult(true, op.getOperator().getValue(), null, "", Collections.emptyList());
+        return new EvaluationResult(true, op.getOperator().getValue(), op, "", Collections.emptyList());
     }
 
     /**
@@ -78,19 +78,19 @@ public class EvaluationResult {
      * @return EvaluationResult the created evaluation result, which is valid by default.
      */
     public static EvaluationResult valid(Operator op, List<EvaluationResult> evaluationResults) {
-        return new EvaluationResult(true, op.getOperator().getValue(), null, "", evaluationResults);
+        return new EvaluationResult(true, op.getOperator().getValue(), op, "", evaluationResults);
     }
 
     /**
      * Creates an EvaluationResult instance indicating an error in the evaluation process.
      *
-     * @param rootCause the operator that caused the error.
+     * @param op the operator that caused the error.
      * @param causeDescription the description of the error.
      *
      * @return EvaluationResult the created evaluation result, which is not valid by default.
      */
-    public static EvaluationResult withError(Operator rootCause, String causeDescription) {
-        return new EvaluationResult(false, rootCause.getOperator().getValue(), rootCause, causeDescription, new ArrayList<>());
+    public static EvaluationResult withError(Operator op, String causeDescription) {
+        return new EvaluationResult(false, op.getOperator().getValue(), op, causeDescription, new ArrayList<>());
     }
 
 
