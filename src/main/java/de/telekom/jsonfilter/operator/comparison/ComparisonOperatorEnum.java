@@ -18,6 +18,7 @@ public enum ComparisonOperatorEnum implements OperatorEnum {
     GT("greater than"),
     GE("greater or equal"),
     IN("in"),
+    NIN("nin"),
     CT("contains"),
     NCT("not contains");
 

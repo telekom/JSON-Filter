@@ -86,6 +86,11 @@ class OperatorDeserializerTest {
         assertEquals("nct", andOperators.get(9).getOperator().toString().toLowerCase());
         assertEquals("$.nct", ((ComparisonOperator<?>) andOperators.get(9)).getJsonPath());
         assertEquals("NOT_CONTAINS_VALUE", ((ComparisonOperator<?>) andOperators.get(9)).getExpectedValue());
+
+        assertEquals("nin", andOperators.get(10).getOperator().toString().toLowerCase());
+        assertEquals("$.nin", ((ComparisonOperator<?>) andOperators.get(10)).getJsonPath());
+        assertEquals(List.of("NIN_VALUE_0", "NIN_VALUE_1", "NIN_VALUE_2"), ((ComparisonOperator<?>) andOperators.get(10)).getExpectedValue());
+
     }
 
     @Test
