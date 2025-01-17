@@ -41,7 +41,7 @@ dependencies {
     //3rd party
     implementation 'com.jayway.jsonpath:json-path:2.9.0'
     implementation 'net.minidev:json-smart:2.5.1'
-    testImplementation 'commons-io:commons-io:2.16.0'
+    testImplementation 'commons-io:commons-io:2.18.0'
 }
 
 test {
