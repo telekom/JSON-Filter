@@ -169,9 +169,9 @@ The result of the evaluation is an `EvaluationResult` that indicates if and why 
 | greater than     | `gt`     | comparison | Valid if `field` >  `value`.                              |
 | greater or equal | `ge`     | comparison | Valid if `field` >= `value`.                              |
 | in               | `in`     | comparison | Valid if `field` is in `value`.                           |
-| nin              | `nin`    | comparison | Valid if `field` is not in `value`.                       |
+| not in           | `nin`    | comparison | Valid if `field` is not in `value`.                       |
 | contains         | `ct`     | comparison | Valid if `field` contains `value`.                        |
-| nct              | `nct`    | comparison | Valid if `field` does not contain `value`.                |
+| not contains     | `nct`    | comparison | Valid if `field` does not contain `value`.                |
 
 ## Contributing
 
