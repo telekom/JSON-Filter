@@ -12,5 +12,6 @@
   "less": "A",
   "not-equal": "EQUAL_VALUE",
   "regex": "REGEX_VALUE",
-  "nct": "NOT_CONTAIN_VALUE"
+  "nct": "NOT_CONTAIN_VALUE",
+  "nin": "IN_VALUE_0"
 }

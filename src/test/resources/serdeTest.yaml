@@ -33,3 +33,9 @@ and:
 - nct:
     field: "$.nct"
     value: "NOT_CONTAINS_VALUE"
+- nin:
+    field: "$.nin"
+    value:
+    - "NIN_VALUE_0"
+    - "NIN_VALUE_1"
+    - "NIN_VALUE_2"

@@ -41,6 +41,7 @@ public abstract class ComparisonOperator<T> implements Operator {
             case GT -> new GreaterThanOperator<>(jsonPath, expectedValue);
             case GE -> new GreaterEqualOperator<>(jsonPath, expectedValue);
             case IN -> new InOperator<>(jsonPath, (List<?>) expectedValue);
+            case NIN -> new NinOperator<>(jsonPath, (List<?>) expectedValue);
             case CT -> new ContainsOperator<>(jsonPath, expectedValue);
             case NCT -> new NotContainsOperator<>(jsonPath, expectedValue);
         };
